@@ -7,7 +7,7 @@ pip install flask
 pip install flask-WTF 
 ```
 ```
-pip install metploitlib 
+pip install matplotlib
 ```
 you should have index html into separate directory as name "template"
 
