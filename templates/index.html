@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome To ARXU</title>
+    <title>Welcome To Team ARXU's official botnet</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             background-color: #000;
             color: #0F0;
             text-align: center;
@@ -24,34 +24,60 @@
             border: none;
             cursor: pointer;
             margin-right: 10px;
+            border-radius: 5px;
+            outline: none;
+            transition: background-color 0.3s ease;
         }
         input[type="submit"]:hover {
             background-color: #005000;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #0F0;
+            outline: none;
+        }
+        label {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 4px #0F0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 style="font-family: 'Courier New', Courier, monospace; font-size: 36px;">Welcome To ARXU BOTNET</h1>
+        <h1>Welcome To ĀRXŪ BOTNET</h1>
         <form method="post">
             {{ form.csrf_token }}
             <label for="method">Select Attack Method:</label>
-            {{ form.method }}
+            <select id="method" name="method" style="font-size: 16px; padding: 8px;">
+                <option value="DDoS">DDoS</option>
+               
+            </select>
 
             <br/><br/>
 
             <label for="bots">Number of Bots:</label>
-            {{ form.bots }}
+            <input type="number" id="bots" name="bots" min="1" max="1000" value="100" required>
 
             <br/><br/>
 
             <label for="zombies">Number of Zombies:</label>
-            {{ form.zombies }}
+            <input type="number" id="zombies" name="zombies" min="1" max="1000" value="50" required>
 
             <br/><br/>
 
             <label for="target_url">Target URL:</label>
-            <input type="text" id="target_url" name="target_url" required>
+            <input type="text" id="target_url" name="target_url" placeholder="Enter target URL" required>
 
             <br/><br/>
 
@@ -61,4 +87,3 @@
     </div>
 </body>
 </html>
-
